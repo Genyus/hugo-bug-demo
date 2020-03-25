@@ -1,0 +1,48 @@
+<section class="no-mb">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ul>
+                    {{ range .Site.Data.carousel }}
+                    <li>{{ .title }}</li>
+                    {{ end }}
+                </ul>
+                <!-- Should return all -->
+                <hr />
+                <ul>
+                    {{ range where .Site.Data.carousel "weight" "ne" nil }}
+                    <li>{{ .title }}</li>
+                    {{ end }}
+                </ul>
+                <!-- Should return all -->
+                <hr />
+                <ul>
+                    {{ range where .Site.Data.carousel "dummy" "eq" nil }}
+                    <li>{{ .title }}</li>
+                    {{ end }}
+                </ul>
+                <!-- Should return some -->
+                <hr />
+                <ul>
+                    {{ range where .Site.Data.carousel "weight" "gt" 2 }}
+                    <li>{{ .title }}</li>
+                    {{ end }}
+                </ul>
+                <!-- Should return one -->
+                <hr />
+                <ul>
+                    {{ range where .Site.Data.carousel "weight" "==" 4 }}
+                    <li>{{ .title }}</li>
+                    {{ end }}
+                </ul>
+                <!-- Should return some -->
+                <hr />
+                <ul>
+                    {{ range where .Site.Data.carousel "category" "lt" 3 }}
+                    <li>{{ .title }}</li>
+                    {{ end }}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

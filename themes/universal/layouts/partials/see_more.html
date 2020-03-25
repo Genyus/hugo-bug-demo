@@ -1,0 +1,23 @@
+{{ if isset .Site.Params "see_more" }}
+{{ if .Site.Params.see_more.enable }}
+<section class="bar background-image-fixed-2 no-mb color-white hero">
+    <div class="dark-mask"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-uppercase">{{ .Site.Params.see_more.title }}</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bar bar-slim background-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="lead no-mb">{{ .Site.Params.see_more.subtitle }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}
+{{ end }}
